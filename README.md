@@ -28,3 +28,10 @@ The trade-off: there is no public version-specifier matcher (`>=`, `~=`, etc.). 
 ## Edge you will hit
 
 The comparison key treats `1.0.dev0` as sorting below `1.0a0`, which is the order PEP 440 mandates. If you expect dev releases to sort adjacent to the final release, this will surprise you — the spec places them strictly below every pre-release of the same version.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
