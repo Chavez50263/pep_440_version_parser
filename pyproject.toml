@@ -1,6 +1,6 @@
 [project]
 name = "pep-440-version-parser"
-version = "0.1.1"
+version = "0.1.2"
 description = "Parses PEP 440 version strings including epochs, pre-releases, post-releases, and local version segments."
 requires-python = ">=3.10"
 dependencies = []
